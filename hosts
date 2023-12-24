@@ -1,0 +1,9 @@
+[ubuntu-webserver]
+ubuntu_webserver ansible_host=web.linuxify.ir ansible_ssh_user=shayan ansible_become_pass='{{ ubuntu-web-pass }}'
+
+[centos-webserver]
+centos_webserver ansible_host=web2.linuxify.ir ansible_ssh_user=shayan ansible_become_pass='{{ centos-web-pass }}'
+
+[smartway-servers:children]
+ubuntu-webserver
+centos-webserver
